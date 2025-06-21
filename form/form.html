@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const marks=()=>
+    {
+        let a = document.getElementById("java").value || 0 ;
+        let b = document.getElementById("python").value || 0 ;
+        let c = document.getElementById("dsa").value || 0 ;
+
+         let total_m= parseInt(a)+parseInt(b)+parseInt(c);
+         document.getElementById("total_m").value = total_m;
+
+         cal_grade(total_m);
+    }
+
+    const cal_grade=(total_m)=>
+    {
+
+        let grade = 0
+    if(total_m>270)
+    {
+        grade= "A"
+    }
+    else if (total_m < 270 && total_m > 180)
+    {
+        grade = "B"
+    }
+    else if (total_m< 180 && total_m > 80)
+    {
+        grade = "C"
+    }
+    else{
+        grade = "Fail"
+    }
+    
+    
+    document.getElementById("gra").value= grade
+    }
+
+    </script>
+</head>
+<body>
+
+
+    <select name="student name" id="">subject_name
+        <option value="ram ">ram </option>
+        <option value="sham ">sham </option>
+        <option value="mohan">mohan </option>
+    </select>
+
+    <!-- <select name="subject_list" id="">subject_list
+        <option value="java ">java </option>
+        <option value="python ">python </option>
+        <option value="c">c </option>
+    </select>
+     -->
+
+    
+    
+    <label for="java">java</label>
+    <input type="number " id="java" >
+    <br>
+
+     <label for="python">python</label>
+    <input type="number " id="python" ><br>
+
+     <label for="dsa">dsa</label>
+    <input type="number" id="dsa" ><br>
+
+
+    <div>
+         <!-- <label for="marks">marks</label>
+    <input type="number" id="sub_marks"  > -->
+
+    <label for="total marks"> total marks obtained </label>
+    <input type="number" id="total_m" onfocus="marks()" onblur="(value=' ')"  placeholder="total"><br>
+
+    <label for="gra">grade</label>
+    <input type="text" id="gra"   onfocus="cal_grade()"  onblur="(value=' ')" placeholder="grade" > <br>
+
+     
+    </div>
+
+</body>
+</html>

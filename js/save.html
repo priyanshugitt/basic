@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    const store=()=>{
+        let name = document.getElementById("nm").value;
+        
+        let age = document.getElementById("age").value;
+
+        localStorage.setItem("username",name);
+        localStorage.setItem("age",age);
+           
+        document.getElementById("nm").value= "";
+        
+        document.getElementById("age").value ="";
+       
+    }
+    const getme=()=>
+    {
+        debugger;
+         let getage = localStorage.getItem("age");
+          let getname = localStorage.getItem("username");
+        
+        document.getElementById("nm").value= getname;
+        
+         document.getElementById("age").value =getage;
+
+    }
+</script>
+<body style="background-color:cadetblue ;" >
+    
+    username: <input type="text" id="nm" >
+    age: <input type="text" id="age" >
+
+    <button style="background-color: lavender; " onmouseover="this.style.cursor='pointer'"  onclick="store()"  >STORE</button>
+    <button   style="background-color: lavender;" onclick="getme()">GET</button>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let second=0;
+    let minute=0;
+
+    const start=()=>{
+        if(second>-1){
+        if(second==60)
+          {
+            minute++;
+            second=0;
+          }
+          second++;
+
+        document.getElementById("timer").innerHTML= minute+":"+second;
+        setTimeout("start()",1000);}
+    }
+
+    const stop=()=>{
+        minute=0;
+        second=-1;
+        count=0;
+        setTimeout("start()");
+    }
+     
+    count=1;
+
+    const sliders=()=>
+    {
+        
+        if(count==1)
+        { 
+            me.src="../form/google lens.png";
+            count++;
+
+        }
+        else if(count==2 )
+        {
+            me.src="../form/microphone.png";
+            count++;
+        }
+         else if(count==3 )
+        {
+            me.src="../form/searchsymbol.png";
+            count=1;
+        }
+        setTimeout( "sliders()",1000);
+
+
+    }
+
+</script>
+<body >
+    <button onclick="start(),sliders()" > start</button>
+    <div id="timer" > </div>
+    <button onclick="stop()">stop</button>
+
+    
+    <div style="background-color: aqua;" >
+        <img src="" height="300px" width="500px" name="me"  alt="">
+       
+
+
+
+    </div>
+</body>
+</html>

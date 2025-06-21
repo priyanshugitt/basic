@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+
+         const cal=()=>
+         {
+            let q = document.getElementById("qu").value;
+            let p = document.getElementById("pri").value;
+            let dis = document.getElementById("discount").value
+
+            let a = q*p;
+            let d = amount-(dis*q);
+
+            document.getElementById("amount").value = a
+            document.getElementById("discount_amu").value = d
+         }
+         const get_price=(x)=>
+         {
+                let price = 0;
+                if(x=="shirt"){
+                    price=200;
+                    discount=20;
+                }
+                else if(x=="shampoo"){
+                    price=100;
+                    discount=5;
+                }
+                else if(x=="geans"){
+                    price= 700;
+                    discount=70;
+
+                }
+                    
+                document.getElementById("pri").value= price;
+                document.getElementById("discount").value= discount;
+                
+                
+         }
+    </script>
+</head>
+<body>
+
+    <Select name="proli" id="pro_list"  onchange="get_price(this.value)">Product list
+    <option value="shirt"  >shirt</option>
+    <option  value="shampoo">shampoo</option>
+    <option value="geans" >geans</option>
+    </Select>
+
+
+    <label for="quantity">quantity</label>
+    <input type="number" name="quantity" id="qu" placeholder="quantity">
+    <label for="price" onfocus="get_price()" >price</label>
+    <input type="number" id="pri" placeholder="price">
+    <input type="text" id="discount"  >
+    <input type="number" id="amount" onfocus="cal()" onblur="(value=' ')"   placeholder="amount ">
+
+    <input type="number" id=" discount_amu" placeholder="discount" >
+
+</body>
+</html>

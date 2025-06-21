@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+     
+    <label for="name "> name</label><br>
+    <input type="text"  id="name" placeholder="name"><br>
+
+    <label for="qua">quantity</label><br>
+    <input type="number" id="qua" placeholder="quantity"><br>
+
+    <label for="pri">price </label><br>
+    <input type="number" id="pri" placeholder="price"><br>
+
+    <br><button onclick="adddata()" > add</button>
+
+    
+    <div id="Product-list" ></div>
+
+
+<script>
+    var arrProduct_name=new  Array();
+    var arrProduct_price=new  Array();
+    var arrProduct_quantity=new  Array();
+
+    const adddata=()=>{
+
+        let name= document.getElementById("name").value;
+        let quantity= document.getElementById("qua").value;
+        let price= document.getElementById("pri").value;
+
+         arrProduct_name.push(name);
+         arrProduct_price.push(price);
+         arrProduct_quantity.push(quantity);
+
+         let tb="<table border='1' align='center' cellspacing=0 cellpadding='10'>";
+            tb+="<tr><td>Sno</td><td>Product_name</td><td>Product_price</td><td>Product_quantity</td>"
+
+
+        for(i=0; i<arrProduct_name.length;i++)
+        {
+            tb+="<tr><td>"+(i+1)+"</td>";
+             tb+="<td>"+arrProduct_name[i]+"</td>";
+            tb+="<td>"+arrProduct_price[i]+"</td>";
+             tb+="<td>"+arrProduct_quantity[i]+"</td></tr>";
+        }
+        tb+="</table>";
+        document.getElementById("Product-list").innerHTML=tb;
+    }
+</script>
+</body>
+</html>
